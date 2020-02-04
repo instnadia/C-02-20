@@ -6,9 +6,9 @@ namespace Day_2
     {
         static void Main(string[] args)
         {
-            Movie newMovie = new Movie("Brave heart", 1973, "action/drama", 9.8);
-            newMovie.Score = 0;
-            Console.WriteLine(newMovie.Score);
+            Movie newMovie = new Movie("Brave heart", 1973, "action/drama", 9.8); //instance of movie
+            newMovie.Score = 0; // calling the setter, property
+            Console.WriteLine(newMovie.Score); 
             Netflix myNetflix = new Netflix("nadia@nadia.com", "asdasdasd", "Chris");
             Console.WriteLine(myNetflix.ShowOwner);
             myNetflix.addMovieToList(newMovie);
