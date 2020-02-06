@@ -8,6 +8,8 @@ namespace Day_3
             side = side1;
         }
 
+        public int height {get;set;}
+
         public override int GetArea(){
             return side*side;
         }

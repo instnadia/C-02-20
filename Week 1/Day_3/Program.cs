@@ -18,7 +18,7 @@ namespace Day_3
             Console.WriteLine(newS.GetArea());
             Squere newS1 = new Squere(8);
             Console.WriteLine(newS1.GetArea());
-
+            Shape a = new Shape();
         }
     }
 }
