@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Quote
+
+<form action="newQuote" method="post">
+    <span asp-validation-for="quote"></span>
+    <label>Quote:
+    <input asp-for="quote">
+    </label>
+    <span asp-validation-for="author"></span>
+    <label>Author:
+    <input asp-for="author">
+    </label>
+    <button>Send</button>
+</form>
+
+<a href="/listofstrings">list of strings</a><br>
+<a href="/listOfQuotes">List of quotes</a><br>
+<a href="/astring">string</a>

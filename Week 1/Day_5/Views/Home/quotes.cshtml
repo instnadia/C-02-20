@@ -1,0 +1,15 @@
+@model List<Quote>
+
+@foreach(Quote a in Model){
+    <div class="card">
+        <div class="card-header">
+            Quote
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>@a.quote</p>
+                <footer class="blockquote-footer">@a.author</footer>
+            </blockquote>
+        </div>
+    </div>
+}
