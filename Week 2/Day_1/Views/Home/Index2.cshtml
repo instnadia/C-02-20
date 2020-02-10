@@ -1,0 +1,51 @@
+@model ViewModel
+
+<form asp-action="login" asp-controller="Home" method="post">
+    <div class="form-group">
+        <span asp-validation-for="login.lemail"></span>
+        <label asp-for="login.lemail">
+        </label>
+            <input asp-for="login.lemail">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="login.lpassword"></span>
+        <label asp-for="login.lpassword">
+        </label>
+    <input asp-for="login.lpassword">
+    </div>
+    <button>Submit</button>
+</form>
+
+
+<form asp-action="registration" asp-controller="Home" method="post">
+    <div class="form-group">
+        <span asp-validation-for="registration.fname"></span>
+        <label asp-for="registration.fname"></label>
+        <input asp-for="registration.fname">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="registration.lname"></span>
+        <label asp-for="registration.lname">
+        </label>
+        <input asp-for="registration.lname">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="registration.email"></span>
+        <label asp-for="registration.email">
+        </label>
+            <input asp-for="registration.email">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="registration.password"></span>
+        <label asp-for="registration.password">
+        </label>
+            <input asp-for="registration.password">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="registration.confirm_password"></span>
+        <label asp-for="registration.confirm_password">
+        </label>
+            <input asp-for="registration.confirm_password">
+    </div>
+    <button>Register!</button>
+</form>
