@@ -13,7 +13,8 @@ namespace Day_1.Controllers
     {
         public IActionResult Index()
         {
-            return View("Index2");
+            ViewBag.a="asdfasdf";
+            return View("Index");
         }
         [HttpPost("Home/registration")]
         public IActionResult registration(ViewModel user){
@@ -22,7 +23,7 @@ namespace Day_1.Controllers
                 HttpContext.Session.SetInt32("user_id",123123);
                 return RedirectToAction("success");
             }
-            return View("Index2");
+            return View("Index");
         }
         [HttpGet("Home/success")]
         public IActionResult success(){
@@ -43,7 +44,7 @@ namespace Day_1.Controllers
             if(ModelState.IsValid){
                 return RedirectToAction("success");
             }
-            return View("Index2");
+            return View("Index");
         }
 
         public IActionResult Privacy()
