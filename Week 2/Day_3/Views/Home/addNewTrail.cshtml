@@ -1,0 +1,29 @@
+@model Trail
+
+<div class="row">
+    <div class="col"><h1>Add a bew trail</h1></div>
+    <div class="col"><a href="/">Go home!</a></div>
+</div>
+<form asp-action="createTrail" asp-controller="Home" method="post">
+<div class="form-group">
+<span asp-validation-for="Name" class="text-danger"></span>
+<label asp-for="Name"></label>
+<input asp-for="Name">
+</div>
+<div class="form-group">
+<span asp-validation-for="Desc"></span>
+<label asp-for="Desc"></label>
+<input asp-for="Desc">
+</div>
+<div class="form-group">
+<span asp-validation-for="Len"></span>
+<label asp-for="Len"></label>
+<input asp-for="Len">
+</div>
+<div class="form-group">
+<span asp-validation-for="Elv"></span>
+<label asp-for="Elv"></label>
+<input asp-for="Elv">
+</div>
+<button>Create a trail!</button>
+</form>

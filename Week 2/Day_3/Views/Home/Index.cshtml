@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Trail>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Trail</th>
+      <th scope="col">Name</th>
+      <th scope="col">Elavation</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach(Trail trail in Model){
+        <tr>
+        <th scope="row">@trail.TrailId</th>
+        <!-- <td><a href="/Trail/@trail.TrailId">@trail.Name</a></td> -->
+        <td><a asp-action="ShowTrail" asp-route-trailId="@trail.TrailId" asp-controller="Home">@trail.Name</a></td>
+        <td>@trail.Len</td>
+        <td>@trail.Elv</td>
+        </tr>
+    }
+  </tbody>
+</table>
+
+<a asp-action="addNewTrail" asp-controller="Home">Add new Trail</a>
