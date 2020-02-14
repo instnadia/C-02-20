@@ -1,0 +1,25 @@
+@model Post
+<h1>Welcome @ViewBag.user.fname @ViewBag.user.lname</h1>
+
+<form asp-controller="Home" asp-action="newPost" method="Post">
+    <div class="form-group">
+        <span class="text-danger font-weight-bold" asp-validation-for="Content"></span>
+        <label asp-for="Content"></label>
+        <textarea class="form-control" asp-for="Content"></textarea>
+        <button class="btn btn-info">Submit!</button>
+    </div>
+</form>
+
+@foreach(var post in ViewBag.allPosts){
+    <div class="card">
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">@post.Creator.fname @post.Creator.lname said:</h6>
+            <p class="card-text">@post.Content</p>
+            <p class="text-muted">Posted on: @post.CreatedAt</p>
+            <form mathod="post" asp-action="delete" asp-controller="Home" asp-route-pId="@post.PostId">
+                <button class="btn btn-outline-warning">Delete</button>
+            </form>
+            <a asp-action="edit" asp-route-pId="@post.PostId" asp-controller="Home" class="btn btn-outline-info">edit</a>
+        </div>
+    </div>
+}

@@ -1,0 +1,10 @@
+@model Post
+
+<form asp-controller="Home" asp-action="update" method="Post" asp-route-pId="@Model.PostId">
+    <div class="form-group">
+        <span class="text-danger font-weight-bold" asp-validation-for="Content"></span>
+        <label asp-for="Content"></label>
+        <textarea class="form-control" asp-for="Content"></textarea>
+        <button class="btn btn-info">Submit!</button>
+    </div>
+</form>

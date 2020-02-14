@@ -1,0 +1,17 @@
+@model Login
+
+<form asp-action="UserLogin" asp-controller="Home" method="Post">     
+  <div class="form-group">
+    <label asp-for="lemail"></label>
+    <span class="text-danger font-weight-bold" asp-validation-for="lemail"></span>
+    <input class="form-control" asp-for="lemail">
+  </div>
+
+  <div class="form-group">
+    <label asp-for="lpassword"></label>
+    <span class="text-danger font-weight-bold" asp-validation-for="lpassword"></span>
+    <input class="form-control" asp-for="lpassword">
+  </div>
+
+  <button class="btn btn-info" type="submit">Login</button>
+</form>
