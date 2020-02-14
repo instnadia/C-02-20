@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Day_5.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace Day_5.Controllers
 {
@@ -43,12 +44,14 @@ namespace Day_5.Controllers
             if(HttpContext.Session.GetInt32("userId")==null){
                 return RedirectToAction("Index");
             }
+
             int uid = (int)HttpContext.Session.GetInt32("userId");
             User user = dbContext.Users.FirstOrDefault(q=>q.UserId==uid);
-            ViewBag.user = user;
-            List<Post> allP = dbContext.Posts.ToList();
-            ViewBag.allPosts = allP;
-            return View();
+            List<Post> allP = dbContext.Posts.Include(q=>q.Creator).ToList();
+            successModel model = new successModel();
+            model.userLogged = user;
+            model.allP = allP;
+            return View(model);
         }
 
         [HttpPost("Post/new")]
