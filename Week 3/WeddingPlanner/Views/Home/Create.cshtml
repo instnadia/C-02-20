@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model Wedding
+<div class="row justify-content-end">
+    <a class="btn btn-info" href="dashboard">Dashboard</a>
+    <div style="margin-left: 25px;">
+        <a class="btn btn-secondary" href="logout">Log Out</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-md-auto">
+        <h1 class="">Plan Your Wedding</h1>
+    </div>
+</div>
+<div class="container mt-5">
+    <form asp-action="CreateWedding" asp-controller="Home" method="POST">
+        <div class="row">
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-4">
+                    <div class="form-group">
+                        <label asp-for="WedderOne"></label>
+                        <input asp-for="WedderOne">
+                        <p></p>
+                        <span asp-validation-for="WedderOne" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="WedderTwo"></label>
+                        <input asp-for="WedderTwo">
+                        <p></p>
+                        <span asp-validation-for="WedderTwo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="WeddingDate"></label>
+                        <input type="date" asp-for="WeddingDate">
+                        <p></p>
+                        <span asp-validation-for="WeddingDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="WeddingAddress"></label>
+                        <input asp-for="WeddingAddress">
+                        <p></p>
+                        <span asp-validation-for="WeddingAddress" class="text-danger"></span>
+                    </div>
+                    <p></p>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Create</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
